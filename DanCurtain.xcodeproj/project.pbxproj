@@ -16,6 +16,14 @@
 		ECBB153B1D6FF15600494083 /* GLKHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBB153A1D6FF15600494083 /* GLKHomeViewController.m */; };
 		ECBB153F1D6FF25C00494083 /* GLKDanView.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBB153E1D6FF25C00494083 /* GLKDanView.m */; };
 		ECBB15421D6FF26E00494083 /* GLKDanManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBB15411D6FF26E00494083 /* GLKDanManager.m */; };
+		ECE595E71DB9C99200ED4D64 /* libG1KDownloadManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECE595E61DB9C99200ED4D64 /* libG1KDownloadManager.a */; };
+		ECEB70B61D9A10500026B0EF /* OneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECEB70B51D9A10500026B0EF /* OneViewController.m */; };
+		ECFB85B11DAF3AEE006E0AFF /* GlKScrollview.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB85B01DAF3AEE006E0AFF /* GlKScrollview.m */; };
+		ECFB85B81DAF3B03006E0AFF /* 0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ECFB85B31DAF3B03006E0AFF /* 0.jpg */; };
+		ECFB85B91DAF3B03006E0AFF /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ECFB85B41DAF3B03006E0AFF /* 1.jpg */; };
+		ECFB85BA1DAF3B03006E0AFF /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ECFB85B51DAF3B03006E0AFF /* 2.jpg */; };
+		ECFB85BB1DAF3B03006E0AFF /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ECFB85B61DAF3B03006E0AFF /* 3.jpg */; };
+		ECFB85BC1DAF3B03006E0AFF /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ECFB85B71DAF3B03006E0AFF /* 4.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +63,17 @@
 		ECBB153E1D6FF25C00494083 /* GLKDanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLKDanView.m; sourceTree = "<group>"; };
 		ECBB15401D6FF26E00494083 /* GLKDanManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLKDanManager.h; sourceTree = "<group>"; };
 		ECBB15411D6FF26E00494083 /* GLKDanManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLKDanManager.m; sourceTree = "<group>"; };
+		ECE595E11DB9C09600ED4D64 /* G1KDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = G1KDownloadManager.h; sourceTree = "<group>"; };
+		ECE595E61DB9C99200ED4D64 /* libG1KDownloadManager.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libG1KDownloadManager.a; sourceTree = "<group>"; };
+		ECEB70B41D9A10500026B0EF /* OneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneViewController.h; sourceTree = "<group>"; };
+		ECEB70B51D9A10500026B0EF /* OneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneViewController.m; sourceTree = "<group>"; };
+		ECFB85AF1DAF3AEE006E0AFF /* GlKScrollview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlKScrollview.h; sourceTree = "<group>"; };
+		ECFB85B01DAF3AEE006E0AFF /* GlKScrollview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlKScrollview.m; sourceTree = "<group>"; };
+		ECFB85B31DAF3B03006E0AFF /* 0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0.jpg; sourceTree = "<group>"; };
+		ECFB85B41DAF3B03006E0AFF /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		ECFB85B51DAF3B03006E0AFF /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		ECFB85B61DAF3B03006E0AFF /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		ECFB85B71DAF3B03006E0AFF /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECE595E71DB9C99200ED4D64 /* libG1KDownloadManager.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,11 +125,16 @@
 		ECBB14FF1D6FF07900494083 /* DanCurtain */ = {
 			isa = PBXGroup;
 			children = (
+				ECFB85B21DAF3B03006E0AFF /* image */,
+				ECFB85AF1DAF3AEE006E0AFF /* GlKScrollview.h */,
+				ECFB85B01DAF3AEE006E0AFF /* GlKScrollview.m */,
 				ECBB153C1D6FF16700494083 /* Class */,
 				ECBB15331D6FF0CF00494083 /* GLKAppDelegate.h */,
 				ECBB15341D6FF0CF00494083 /* GLKAppDelegate.m */,
 				ECBB15391D6FF15600494083 /* GLKHomeViewController.h */,
 				ECBB153A1D6FF15600494083 /* GLKHomeViewController.m */,
+				ECEB70B41D9A10500026B0EF /* OneViewController.h */,
+				ECEB70B51D9A10500026B0EF /* OneViewController.m */,
 				ECBB15001D6FF07900494083 /* Supporting Files */,
 			);
 			path = DanCurtain;
@@ -147,12 +172,26 @@
 		ECBB153C1D6FF16700494083 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				ECE595E61DB9C99200ED4D64 /* libG1KDownloadManager.a */,
+				ECE595E11DB9C09600ED4D64 /* G1KDownloadManager.h */,
 				ECBB153D1D6FF25C00494083 /* GLKDanView.h */,
 				ECBB153E1D6FF25C00494083 /* GLKDanView.m */,
 				ECBB15401D6FF26E00494083 /* GLKDanManager.h */,
 				ECBB15411D6FF26E00494083 /* GLKDanManager.m */,
 			);
 			name = Class;
+			sourceTree = "<group>";
+		};
+		ECFB85B21DAF3B03006E0AFF /* image */ = {
+			isa = PBXGroup;
+			children = (
+				ECFB85B31DAF3B03006E0AFF /* 0.jpg */,
+				ECFB85B41DAF3B03006E0AFF /* 1.jpg */,
+				ECFB85B51DAF3B03006E0AFF /* 2.jpg */,
+				ECFB85B61DAF3B03006E0AFF /* 3.jpg */,
+				ECFB85B71DAF3B03006E0AFF /* 4.jpg */,
+			);
+			path = image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +261,7 @@
 				TargetAttributes = {
 					ECBB14FC1D6FF07900494083 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 4B938222ZG;
 					};
 					ECBB15151D6FF07900494083 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -258,7 +298,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECFB85BB1DAF3B03006E0AFF /* 3.jpg in Resources */,
+				ECFB85BA1DAF3B03006E0AFF /* 2.jpg in Resources */,
+				ECFB85B81DAF3B03006E0AFF /* 0.jpg in Resources */,
 				ECBB15101D6FF07900494083 /* LaunchScreen.storyboard in Resources */,
+				ECFB85BC1DAF3B03006E0AFF /* 4.jpg in Resources */,
+				ECFB85B91DAF3B03006E0AFF /* 1.jpg in Resources */,
 				ECBB150D1D6FF07900494083 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,8 +332,10 @@
 				ECBB15021D6FF07900494083 /* main.m in Sources */,
 				ECBB153B1D6FF15600494083 /* GLKHomeViewController.m in Sources */,
 				ECBB15351D6FF0CF00494083 /* GLKAppDelegate.m in Sources */,
+				ECEB70B61D9A10500026B0EF /* OneViewController.m in Sources */,
 				ECBB15421D6FF26E00494083 /* GLKDanManager.m in Sources */,
 				ECBB153F1D6FF25C00494083 /* GLKDanView.m in Sources */,
+				ECFB85B11DAF3AEE006E0AFF /* GlKScrollview.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,8 +470,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4B938222ZG;
 				INFOPLIST_FILE = DanCurtain/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DanCurtain",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sobf.DanCurtain;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -434,8 +487,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4B938222ZG;
 				INFOPLIST_FILE = DanCurtain/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DanCurtain",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sobf.DanCurtain;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -506,6 +565,7 @@
 				ECBB152C1D6FF07900494083 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ECBB152D1D6FF07900494083 /* Build configuration list for PBXNativeTarget "DanCurtainTests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +574,7 @@
 				ECBB152F1D6FF07900494083 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ECBB15301D6FF07900494083 /* Build configuration list for PBXNativeTarget "DanCurtainUITests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +583,7 @@
 				ECBB15321D6FF07900494083 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

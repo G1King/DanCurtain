@@ -9,8 +9,10 @@
 #import "GLKHomeViewController.h"
 #import "GLKDanView.h"
 #import "GLKDanManager.h"
+#import "OneViewController.h"
+#import <CoreMotion/CoreMotion.h>
 @interface GLKHomeViewController ()<UITextFieldDelegate>
-
+@property (nonatomic, strong) CMMotionManager * motionManager;
 @property (nonatomic,strong)GLKDanManager *manager;
 @property (nonatomic,strong)UITextField * text;
 @property BOOL vip;
@@ -23,8 +25,115 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"弹幕网";
-    [self initDan];
-   }
+        [self initDan];
+//    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(change:) name:UIDeviceOrientationDidChangeNotification object:nil];
+
+    NSTimer * timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(startMotionManager) userInfo:nil repeats:YES];
+    NSRunLoop * roop = [NSRunLoop currentRunLoop];
+    [roop addTimer:timer forMode:NSRunLoopCommonModes];
+
+}
+- (void)startMotionManager{
+    if (_motionManager == nil) {
+        _motionManager = [[CMMotionManager alloc] init];
+    }
+    _motionManager.deviceMotionUpdateInterval = 1/15.0;
+    if (_motionManager.deviceMotionAvailable) {
+//        NSLog(@"Device Motion Available");
+        [_motionManager startDeviceMotionUpdatesToQueue:[NSOperationQueue currentQueue]
+                                            withHandler: ^(CMDeviceMotion *motion, NSError *error){
+                                                [self performSelectorOnMainThread:@selector(handleDeviceMotion:) withObject:motion waitUntilDone:YES];
+                                                
+                                            }];
+    } else {
+//        NSLog(@"No device motion on device.");
+        [self setMotionManager:nil];
+    }
+}
+- (void)handleDeviceMotion:(CMDeviceMotion *)deviceMotion{
+    double x = deviceMotion.gravity.x;
+    double y = deviceMotion.gravity.y;
+    double z = deviceMotion.gravity.z;
+    CGFloat device_angle = M_PI / 2.0f - atan2(y, x);
+    
+    
+    
+    if ( (device_angle > -M_PI_4) && (device_angle < M_PI_4) ){
+        
+//        orientation = UIDeviceOrientationPortrait;
+    }
+    else if ((device_angle < -M_PI_4) && (device_angle > -3 * M_PI_4))
+        
+//        orientation = UIDeviceOrientationLandscapeLeft;
+        NSLog(@"left!!!");
+    
+    else if ((device_angle > M_PI_4) && (device_angle < 3 * M_PI_4)){
+        
+//        orientation = UIDeviceOrientationLandscapeRight;
+        NSLog(@"right!!!");
+        [_motionManager stopDeviceMotionUpdates];
+    }
+    
+    else{
+    
+    }
+        
+//        orientation = UIDeviceOrientationPortraitUpsideDown;
+
+
+
+
+//
+//    if (fabs(y) >= fabs(x))
+//    {
+//        if (y >= 0){
+//            // UIDeviceOrientationPortraitUpsideDown;
+//        }
+//        else{
+//            // UIDeviceOrientationPortrait;
+//        }
+//    }
+//    else
+//    {
+//        if (x >= 0){
+//            // UIDeviceOrientationLandscapeRight;
+//            NSLog(@"right");
+//        }
+//        else{
+//            // UIDeviceOrientationLandscapeLeft;
+//            NSLog(@"left");
+//        }
+//    }
+}
+- (void)didRotate:(NSTimer *)timer{
+    UIDevice * divice = [UIDevice currentDevice];
+    switch (divice.orientation) {
+        case UIDeviceOrientationLandscapeLeft:
+            NSLog(@"left");
+            break;
+            case UIDeviceOrientationLandscapeRight:
+            NSLog(@"right");
+            break;
+        default:
+            break;
+    }
+}
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    if (self.interfaceOrientation == UIDeviceOrientationPortrait) {
+        NSLog(@"竖直");
+    } else if (self.interfaceOrientation == UIDeviceOrientationLandscapeLeft) {
+        NSLog(@"水平向左");
+    } else if(self.interfaceOrientation == UIDeviceOrientationLandscapeLeft) {
+        NSLog(@"水平向右");
+    }
+}
+-(void)change:(NSObject*)sender{
+    UIDevice* device = [sender valueForKey:@"object"];
+    NSLog(@"%zd",device.orientation);
+    
+}
 -(void)initDan{
     self.text = [[UITextField alloc]initWithFrame:CGRectMake(80, 300, 200, 44)];
    self.text.keyboardType=UIKeyboardTypeDefault;
@@ -57,7 +166,9 @@
     [self.manager start];
 }
 -(void)stopDan{
-    [self.manager stop];
+//    [self.manager stop];
+    OneViewController *one = [[OneViewController alloc]init];
+    [self.navigationController pushViewController:one animated:NO];
 }
 -(void)send{
 //    NSLog(@"%@",self.text.text);
